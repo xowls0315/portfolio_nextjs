@@ -6,10 +6,11 @@ import { IoMdPerson, IoIosSchool } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
 import Image from "next/image";
 
-const Aboutme = () => {
+const Aboutme = ({ disableSectionHeight = false }) => {
   const [sectionHeight, setSectionHeight] = useState("100vh");
 
   useEffect(() => {
+    if (disableSectionHeight) return; // ✅ Swiper 모드에서는 높이 계산 끔
     const header = document.getElementById("site-header");
     const updateHeight = () => {
       const headerHeight = header?.offsetHeight || 0;
@@ -54,8 +55,8 @@ const Aboutme = () => {
   return (
     <section
       id="aboutme"
-      style={{ height: sectionHeight }}
-      className={"relative bg-[#111a24] overflow-hidden"}
+      style={disableSectionHeight ? undefined : { height: sectionHeight }} // ✅ Swiper일 땐 Swiper가 높이 관리
+      className="relative bg-[#111a24] overflow-hidden h-full"
     >
       <Container className="flex flex-col items-center text-white">
         <h2 className="font-bold text-white text-6xl py-[30px]">ABOUT ME</h2>
@@ -98,17 +99,21 @@ const Aboutme = () => {
           </div>
 
           {/* 바깥: border gradient */}
-          <div className="w-full p-[5px] rounded-[10px] bg-gradient-to-r from-[#517307] via-[#A8F00E] to-[#CCF576] flex flex-col items-center">
+          <div className="w-full p-[5px] rounded-[10px] bg-gradient-to-r from-[#517307] via-[#A8F00E] to-[#CCF576] flex flex-col items-center bg-[length:200%_200%] animate-gradient-x">
             {/* 안쪽: 실제 콘텐츠 박스 */}
             <div className="w-full h-full rounded-[10px] bg-[#111a24] flex flex-col items-center">
-              <h4 className="text-4xl font-bold py-[20px] text-[#A8F00E]">
+              <h4
+                className="text-4xl font-bold py-[20px] bg-gradient-to-r from-[#517307] via-[#A8F00E] to-[#CCF576]
+             bg-clip-text text-transparent animate-gradient-x"
+              >
                 Tech Stack
               </h4>
+
               <div className="w-full h-[100%] grid grid-cols-6 gap-[30px] p-[20px]">
                 {techStacks.map((tech, index) => (
                   <button
                     key={index}
-                    className="bg-[#2c2f36] rounded-[10px] flex flex-col justify-center items-center gap-[10px] p-[10px] hover:scale-105 hover:shadow-[0_0_15px_#A8F00E] transition-all duration-200"
+                    className="bg-[#2c2f36] rounded-[10px] flex flex-col justify-center items-center gap-[5px] py-[10px] hover:scale-105 hover:shadow-[0_0_15px_#A8F00E] transition-all duration-200"
                   >
                     <Image
                       src={tech.img}
