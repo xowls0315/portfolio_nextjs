@@ -41,7 +41,7 @@ export default function Home() {
       >
         <SwiperSlide className="!h-full">
           <div className="h-full">
-            <Introduce disableSectionHeight /> {/* 아래 3) 참고 */}
+            <Introduce disableSectionHeight />
           </div>
         </SwiperSlide>
 

@@ -20,7 +20,7 @@ const Projects = ({ disableSectionHeight = false }) => {
     updateHeight(); // 최초 계산
     window.addEventListener("resize", updateHeight);
     return () => window.removeEventListener("resize", updateHeight);
-  }, []);
+  }, [disableSectionHeight]);
 
   const cardBase =
     "w-full max-w-[360px] aspect-[4/3] p-[20px] flex flex-col bg-cover bg-center rounded-[10px] text-[18px] hover:scale-[1.05] transition-all cursor-pointer duration-300";
@@ -82,10 +82,10 @@ const Projects = ({ disableSectionHeight = false }) => {
       >
         {hoverInfo && (
           <div className="text-center">
-            <h3 className="text-6xl font-extrabold bg-gradient-to-r from-[#294B1A] via-[#A8F00E] to-[#B5C8A8] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
+            <h3 className="text-6xl font-extrabold bg-gradient-to-r from-[#A8F00E] via-[#CCF576] to-[#D4F8D3] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
               {hoverInfo.title}
             </h3>
-            <p className="mt-4 text-2xl bg-gradient-to-r from-[#294B1A] via-[#A8F00E] to-[#B5C8A8] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)">
+            <p className="mt-4 text-2xl bg-gradient-to-r from-[#A8F00E] via-[#CCF576] to-[#D4F8D3] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)">
               {hoverInfo.subtitle}
             </p>
           </div>
@@ -93,7 +93,10 @@ const Projects = ({ disableSectionHeight = false }) => {
       </div>
 
       <Container className="relative z-10 flex flex-col items-center text-white">
-        <h2 className="font-bold text-white text-6xl py-[30px]">PROJECTS</h2>
+        <h2 className="font-bold text-white text-3xl xs:text-4xl lg:text-6xl py-4 lg:py-6">
+          PROJECTS
+        </h2>
+
         <div className="w-full h-full grid grid-cols-2 place-items-center gap-[30px]">
           {projects.map((p, index) => (
             <Link

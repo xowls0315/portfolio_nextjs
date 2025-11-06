@@ -2,6 +2,8 @@
 
 import Container from "@/components/Container";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { animation, containerVariant } from "./styles/motion";
 
 const Introduce = ({ disableSectionHeight = false }) => {
   const [sectionHeight, setSectionHeight] = useState("100vh");
@@ -17,7 +19,7 @@ const Introduce = ({ disableSectionHeight = false }) => {
     updateHeight(); // 최초 계산
     window.addEventListener("resize", updateHeight);
     return () => window.removeEventListener("resize", updateHeight);
-  }, []);
+  }, [disableSectionHeight]);
 
   const phrases = [
     '"더 나은 사용자 경험을 고민하는 프론트엔드 개발자입니다."',
@@ -41,25 +43,32 @@ const Introduce = ({ disableSectionHeight = false }) => {
         playsInline
       />
 
-      <Container className="relative z-10 h-[100%] flex flex-col justify-center items-center gap-[20px]">
-        <h2 className={"font-bold text-5xl text-white"}>황태진</h2>
-        <h2 className={"text-4xl text-[#8792b0]"}>
+      <Container className="relative z-10 h-full flex flex-col justify-center items-center gap-3 xs:gap-4 lg:gap-5">
+        <h2 className="font-bold text-white text-3xl xs:text-4xl lg:text-5xl">
+          황태진
+        </h2>
+
+        <h2 className="text-[#8792b0] text-xl xs:text-2xl lg:text-4xl">
           프론트엔드 개발자 포트폴리오
         </h2>
-        <div
-          className={
-            "h-[200px] flex flex-col justify-center items-center text-xl text-[#A8F00E] gap-[10px]"
-          }
+
+        <motion.div
+          className="h-[120px] xs:h-[160px] lg:h-[200px] flex flex-col justify-center items-center text-base xs:text-lg lg:text-xl text-[#A8F00E] gap-2 xs:gap-2.5 lg:gap-3"
+          variants={containerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
         >
           {phrases.map((text, index) => (
-            <span
+            <motion.span
               key={index}
-              className="hover:text-[#ccf576] hover:scale-[1.03] transition-all duration-500"
+              variants={animation.fadeInSlideUp}
+              className="text-center transition-all duration-50 hover:text-[#ccf576] hover:scale-[1.03]"
             >
               {text}
-            </span>
+            </motion.span>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
