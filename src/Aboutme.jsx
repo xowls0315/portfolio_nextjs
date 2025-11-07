@@ -130,58 +130,45 @@ const Aboutme = ({ disableSectionHeight = false }) => {
                 Tech Stack
               </h4>
 
-              {/* ✅ 모바일(480px 미만): 간단한 3열 그리드 */}
-              <div className="block xs:hidden w-full">
-                <div className="grid grid-cols-3 gap-3 p-3">
-                  {techStacks.map((tech, index) => (
-                    <button
-                      key={index}
-                      className="rounded-[10px] flex flex-col justify-center items-center gap-1.5 py-2
-              transition-all duration-200 hover:scale-105 hover:shadow-[0_0_10px_#CCF576]
-              bg-gradient-to-r from-[#A8F00E] via-[#CCF576] to-[#D4F8D3]
-              bg-clip-text text-transparent"
-                    >
-                      <Image
-                        src={tech.img}
-                        alt={tech.name}
-                        width={40}
-                        height={40}
-                      />
-                      <span className="text-sm">{tech.name}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* ✅ xs~lg (480~1024px): Swiper 슬라이더 + 네비게이터 */}
-              <div className="hidden xs:block lg:hidden relative w-full">
+              {/* ✅ <lg 전부: Swiper 슬라이더 + 네비게이터 (모바일~태블릿 공용) */}
+              <div className="block lg:hidden relative w-full">
                 {/* 외부 네비게이터 버튼 */}
                 <button
                   className="tech-prev absolute left-[-10px] top-1/2 -translate-y-1/2 z-10
-          bg-transparent border-none cursor-pointer text-[#A8F00E]
-          hover:text-[#CCF576] transition-all duration-300"
+               bg-transparent border-none cursor-pointer text-[#A8F00E]
+               hover:text-[#CCF576] transition-all duration-300"
                   aria-label="이전"
                 >
-                  <RiArrowLeftWideLine className="w-10 h-10 xs:w-12 xs:h-12" />
+                  <RiArrowLeftWideLine className="w-9 h-9 xs:w-12 xs:h-12" />
                 </button>
 
                 <button
                   className="tech-next absolute right-[-10px] top-1/2 -translate-y-1/2 z-10
-          bg-transparent border-none cursor-pointer text-[#A8F00E]
-          hover:text-[#CCF576] transition-all duration-300"
+               bg-transparent border-none cursor-pointer text-[#A8F00E]
+               hover:text-[#CCF576] transition-all duration-300"
                   aria-label="다음"
                 >
-                  <RiArrowRightWideLine className="w-10 h-10 xs:w-12 xs:h-12" />
+                  <RiArrowRightWideLine className="w-9 h-9 xs:w-12 xs:h-12" />
                 </button>
 
                 <Swiper
                   modules={[Navigation, A11y]}
+                  // 버튼 DOM 연결 타이밍 이슈 예방
+                  onBeforeInit={(sw) => {
+                    sw.params.navigation = {
+                      ...(sw.params.navigation || {}),
+                      prevEl: ".tech-prev",
+                      nextEl: ".tech-next",
+                    };
+                  }}
                   navigation={{ prevEl: ".tech-prev", nextEl: ".tech-next" }}
-                  spaceBetween={16}
-                  slidesPerView={3}
+                  spaceBetween={14}
+                  slidesPerView={2} // ⬅ 기본(아주 작은 폰)
                   breakpoints={{
-                    640: { slidesPerView: 4, spaceBetween: 20 },
-                    768: { slidesPerView: 5, spaceBetween: 24 },
+                    360: { slidesPerView: 3, spaceBetween: 14 }, // 작은 폰
+                    480: { slidesPerView: 3, spaceBetween: 16 }, // xs 시작
+                    640: { slidesPerView: 4, spaceBetween: 18 },
+                    768: { slidesPerView: 5, spaceBetween: 20 }, // 태블릿 상향
                   }}
                   className="techSwiper pb-4"
                 >
@@ -189,20 +176,18 @@ const Aboutme = ({ disableSectionHeight = false }) => {
                     <SwiperSlide key={index}>
                       <button
                         className="rounded-[10px] flex flex-col justify-center items-center gap-2 py-3
-                transition-all duration-200 hover:scale-105 hover:shadow-[0_0_12px_#CCF576]
-                bg-gradient-to-r from-[#A8F00E] via-[#CCF576] to-[#D4F8D3]
-                bg-clip-text text-transparent"
+                     transition-all duration-200 hover:scale-105 hover:shadow-[0_0_12px_#CCF576]
+                     bg-gradient-to-r from-[#A8F00E] via-[#CCF576] to-[#D4F8D3]
+                     bg-clip-text text-transparent"
                       >
                         <Image
                           src={tech.img}
                           alt={tech.name}
-                          width={55}
-                          height={55}
-                          className="xs:w-[60px] xs:h-[60px]"
+                          width={48} // 모바일에서 살짝 줄임
+                          height={48}
+                          className="xs:w-[56px] xs:h-[56px]"
                         />
-                        <span className="text-sm xs:text-base">
-                          {tech.name}
-                        </span>
+                        <span className="text-xs xs:text-sm">{tech.name}</span>
                       </button>
                     </SwiperSlide>
                   ))}
