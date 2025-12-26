@@ -5,15 +5,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 
-import Aboutme from "@/src/Aboutme";
-import Contact from "@/src/Contact";
-import Introduce from "@/src/Introduce";
-import Projects from "@/src/Projects";
-import { useSwiperNav } from "@/src/context/SwiperNavContext";
+import Aboutme from "@/components/Aboutme";
+import Contact from "@/components/Contact";
+import Introduce from "@/components/Introduce";
+import Projects from "@/components/Projects";
+import { useSwiperNav } from "@/context/SwiperNavContext";
 
 export default function Home() {
-  const [containerHeight, setContainerHeight] = useState("100vh");
-  const { setSwiper } = useSwiperNav(); // ✅ 컨텍스트 setter
+  const [containerHeight, setContainerHeight] = useState<string>("100vh");
+  const { setSwiper } = useSwiperNav();
 
   useEffect(() => {
     const header = document.getElementById("site-header");
@@ -33,11 +33,11 @@ export default function Home() {
         modules={[Mousewheel]}
         mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
         speed={800}
-        slidesPerView={1} // 한 번에 한 화면
-        allowTouchMove={true} // 터치 스와이프 허용(모바일)
-        style={{ height: containerHeight }} // ✅ 헤더 높이만큼 제외
+        slidesPerView={1}
+        allowTouchMove={true}
+        style={{ height: containerHeight }}
         className="fullpageSwiper"
-        onSwiper={(sw) => setSwiper(sw)} // ✅ 인스턴스 저장
+        onSwiper={(sw) => setSwiper(sw)}
       >
         <SwiperSlide className="!h-full">
           <div className="h-full">

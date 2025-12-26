@@ -31,7 +31,7 @@ export const animation = {
       transition: { duration: 1, ease: "easeInOut" },
     },
   },
-};
+} as const;
 
 export const containerVariant = {
   hidden: {},
@@ -40,4 +40,4 @@ export const containerVariant = {
       staggerChildren: 0.7,
     },
   },
-};
+} as const;
