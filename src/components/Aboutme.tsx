@@ -42,7 +42,7 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
     { name: "React", img: "/React.svg" },
     { name: "Next.js", img: "/Next.js.svg" },
     { name: "Express.js", img: "/Express.js.svg" },
-    { name: "VS Code", img: "/VS Code.svg" },
+    { name: "NestJS", img: "/NestJS.png" },
     { name: "Git", img: "/Git.svg" },
     { name: "GitHub", img: "/GitHub.svg" },
   ];
@@ -51,7 +51,7 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
     <section id="aboutme" style={disableSectionHeight ? undefined : { height: sectionHeight }} className="relative bg-[#111a24] overflow-hidden h-full">
       <Container className="flex flex-col items-center text-white h-full overflow-hidden">
         <h2 className="font-neo font-bold text-white text-3xl xs:text-4xl lg:text-6xl py-3 lg:py-4 flex-shrink-0">ABOUT ME</h2>
-        <div className="w-full flex-1 min-h-0 flex flex-col gap-3 lg:gap-4">
+        <div className="w-full flex-1 min-h-0 flex flex-col justify-evenly gap-3 lg:gap-4">
           <div className="w-full flex flex-col lg:flex-row lg:items-center lg:justify-center gap-4 lg:gap-6 flex-shrink-0">
             <div className="flex justify-center">
               <div className="relative w-32 xs:w-44 lg:w-64 aspect-square rounded-full overflow-hidden">
@@ -76,7 +76,7 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
           </div>
 
           <motion.div
-            className="w-full flex-1 min-h-0 max-h-[45vh] lg:max-h-[fit-content] p-[3px] xs:p-[4px] rounded-[10px] bg-gradient-to-r from-[#517307] via-[#A8F00E] to-[#CCF576] flex flex-col items-center bg-[length:200%_200%] animate-gradient-x overflow-hidden"
+            className="w-full flex-1 min-h-0 max-h-[20vh] xs:max-h-[30vh] lg:max-h-[fit-content] p-[3px] xs:p-[4px] rounded-[10px] bg-gradient-to-r from-[#517307] via-[#A8F00E] to-[#CCF576] flex flex-col items-center bg-[length:200%_200%] animate-gradient-x overflow-hidden"
             variants={animation.fadeInSlideUp}
             initial="hidden"
             whileInView="visible"
@@ -131,16 +131,18 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
                   className="techSwiper pb-3 h-full"
                 >
                   {techStacks.map((tech, index) => (
-                    <SwiperSlide key={index} className="h-auto">
-                      <button
-                        className="rounded-[8px] flex flex-col justify-center items-center gap-1.5 py-2
-                     transition-all duration-200 hover:scale-105 hover:shadow-[0_0_12px_#CCF576]
-                     bg-gradient-to-r from-[#A8F00E] via-[#CCF576] to-[#D4F8D3]
-                     bg-clip-text text-transparent h-full"
-                      >
-                        <Image src={tech.img} alt={tech.name} width={40} height={40} className="xs:w-[48px] xs:h-[48px]" />
-                        <span className="text-[10px] xs:text-xs">{tech.name}</span>
-                      </button>
+                    <SwiperSlide key={index} className="h-full flex items-center">
+                      <div className="w-full h-full flex justify-center items-center">
+                        <button
+                          className="w-fit h-fit rounded-[8px] flex flex-col justify-center items-center gap-2 p-4 xs:p-6
+                          transition-all duration-200 hover:scale-105 hover:shadow-[0_0_12px_#CCF576]
+                          bg-gradient-to-r from-[#A8F00E] via-[#CCF576] to-[#D4F8D3]
+                          bg-clip-text text-transparent"
+                        >
+                          <Image src={tech.img} alt={tech.name} width={56} height={56} className="w-[56px] h-[56px] xs:w-[64px] xs:h-[64px]" />
+                          <span className="text-xs xs:text-sm">{tech.name}</span>
+                        </button>
+                      </div>
                     </SwiperSlide>
                   ))}
                 </Swiper>
