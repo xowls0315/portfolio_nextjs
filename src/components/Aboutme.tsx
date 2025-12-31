@@ -113,11 +113,18 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
                 <Swiper
                   modules={[Navigation, A11y]}
                   onBeforeInit={(sw) => {
-                    sw.params.navigation = {
-                      ...(sw.params.navigation || {}),
-                      prevEl: ".tech-prev",
-                      nextEl: ".tech-next",
-                    };
+                    const navConfig = sw.params.navigation;
+                    if (navConfig && typeof navConfig === "object") {
+                      Object.assign(navConfig, {
+                        prevEl: ".tech-prev",
+                        nextEl: ".tech-next",
+                      });
+                    } else {
+                      sw.params.navigation = {
+                        prevEl: ".tech-prev",
+                        nextEl: ".tech-next",
+                      };
+                    }
                   }}
                   navigation={{ prevEl: ".tech-prev", nextEl: ".tech-next" }}
                   spaceBetween={12}
