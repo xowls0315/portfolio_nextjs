@@ -23,29 +23,29 @@ const Projects = ({ disableSectionHeight = false }: SectionProps) => {
       url: "https://github.com/Capstone-AdCanvas",
     },
     {
+      title: "Meet-Middle",
+      subtitle: "Vibe Coding",
+      desc: "Team Project",
+      color: "#B5C8A8",
+      bg: "https://github.com/user-attachments/assets/3c66c599-9460-4a37-865c-c26fb8ffece3",
+      url: "https://github.com/xowls0315/meet-middle",
+    },
+    {
+      title: "Hamburger-Collection",
+      subtitle: "Vibe Coding",
+      desc: "Personal Project",
+      color: "#B5C8A8",
+      bg: "https://github.com/user-attachments/assets/207df631-c04c-4c42-b5e8-b5121dfbb28d",
+      url: "https://github.com/xowls0315/Hamburger-Collection",
+    },
+    {
       title: "Instagram",
       subtitle: "Clone Vibe Coding",
       desc: "Personal Project",
       color: "#B5C8A8",
       bg: "/insta-project.png",
       url: "https://github.com/xowls0315/2025_cicd_insta/blob/master/README.md",
-    },
-    {
-      title: "ToDoList",
-      subtitle: "Vibe Coding",
-      desc: "Personal Project",
-      color: "#517307",
-      bg: "/todolist.png",
-      url: "https://github.com/xowls0315/2025_cicd_ToDoList/blob/master/README.md",
-    },
-    {
-      title: "Bready",
-      subtitle: "Clone Coding",
-      desc: "Personal Project",
-      color: "#517307",
-      bg: "/Bready.png",
-      url: "https://react-bready.vercel.app/",
-    },
+    }
   ];
 
   return (
