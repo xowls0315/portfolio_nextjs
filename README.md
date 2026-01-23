@@ -1,6 +1,7 @@
 # Portfolio Website
 
-프론트엔드 개발자 황태진의 포트폴리오 웹사이트입니다.
+프론트엔드 개발자 황태진의 포트폴리오 웹사이트입니다. <br />
+※ 배포 링크(Vercel): https://tjin01-portfolio-nextjs.vercel.app/
 
 ## 🚀 기술 스택
 
