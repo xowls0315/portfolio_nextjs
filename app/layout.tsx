@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/ui/Header";
 import "./globals.css";
 import { SwiperNavProvider } from "@/context/SwiperNavContext";
 import { neo } from "@/lib/font";
