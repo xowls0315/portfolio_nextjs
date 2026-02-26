@@ -48,25 +48,45 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
   ];
 
   return (
-    <section id="aboutme" style={disableSectionHeight ? undefined : { height: sectionHeight }} className="relative bg-[#111a24] overflow-hidden h-full">
+    <section
+      id="aboutme"
+      style={disableSectionHeight ? undefined : { height: sectionHeight }}
+      className="relative bg-[#111a24] overflow-hidden h-full"
+    >
       <Container className="flex flex-col items-center text-white h-full overflow-hidden">
-        <h2 className="font-neo font-bold text-white text-3xl xs:text-4xl lg:text-6xl py-3 lg:py-4 flex-shrink-0">ABOUT ME</h2>
+        <h2 className="font-neo font-bold text-white text-3xl xs:text-4xl lg:text-6xl py-3 lg:py-4 flex-shrink-0">
+          ABOUT ME
+        </h2>
         <div className="w-full flex-1 min-h-0 flex flex-col justify-evenly gap-3 lg:gap-4">
           <div className="w-full flex flex-col lg:flex-row lg:items-center lg:justify-center gap-4 lg:gap-6 flex-shrink-0">
             <div className="flex justify-center">
               <div className="relative w-32 xs:w-44 lg:w-64 aspect-square rounded-full overflow-hidden">
-                <Image src="/t.jin_01.jpg" alt="황태진 프로필 사진" fill priority className="object-cover rounded-full" />
+                <Image
+                  src="/증명사진.jpg"
+                  alt="황태진 프로필 사진"
+                  fill
+                  priority
+                  className="object-cover object-center rounded-full"
+                />
               </div>
             </div>
 
             <div className="w-full lg:w-[50%] flex flex-col justify-center text-center lg:text-left">
-              <h3 className="text-xl xs:text-2xl lg:text-3xl font-bold">안녕하세요!</h3>
-              <span className="mt-2 text-sm xs:text-base lg:text-lg">사용자 중심의 웹 애플리케이션을 만드는 것에 열정을 가진 신입 프론트엔드 개발자입니다.</span>
-              <span className="text-sm xs:text-base lg:text-lg">깔끔하고 직관적인 UI/UX를 통해 사용자에게 최고의 경험을 제공하고자 노력합니다.</span>
+              <h3 className="text-xl xs:text-2xl lg:text-3xl font-bold">
+                안녕하세요!
+              </h3>
+              <span className="mt-2 text-sm xs:text-base lg:text-lg">
+                사용자 중심의 웹 애플리케이션을 만드는 것에 열정을 가진 신입 웹
+                프론트엔드 개발자입니다. 깔끔하고 직관적인 UI/UX를 통해
+                사용자에게 최고의 경험을 제공하고자 노력합니다.
+              </span>
 
               <div className="mt-4 flex flex-col gap-2 xs:gap-2 lg:gap-2.5">
                 {infoList.map((item, index) => (
-                  <span key={index} className="flex items-center justify-center lg:justify-start gap-2 text-sm xs:text-base">
+                  <span
+                    key={index}
+                    className="flex items-center justify-center lg:justify-start gap-2 text-sm xs:text-base"
+                  >
                     <strong className="text-lg xs:text-xl">{item.icon}</strong>
                     {item.text}
                   </span>
@@ -138,7 +158,10 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
                   className="techSwiper pb-3 h-full"
                 >
                   {techStacks.map((tech, index) => (
-                    <SwiperSlide key={index} className="h-full flex items-center">
+                    <SwiperSlide
+                      key={index}
+                      className="h-full flex items-center"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <button
                           className="w-fit h-fit rounded-[8px] flex flex-col justify-center items-center gap-2 p-4 xs:p-6
@@ -146,8 +169,16 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
                           bg-gradient-to-r from-[#A8F00E] via-[#CCF576] to-[#D4F8D3]
                           bg-clip-text text-transparent"
                         >
-                          <Image src={tech.img} alt={tech.name} width={56} height={56} className="w-[56px] h-[56px] xs:w-[64px] xs:h-[64px]" />
-                          <span className="text-xs xs:text-sm">{tech.name}</span>
+                          <Image
+                            src={tech.img}
+                            alt={tech.name}
+                            width={56}
+                            height={56}
+                            className="w-[56px] h-[56px] xs:w-[64px] xs:h-[64px]"
+                          />
+                          <span className="text-xs xs:text-sm">
+                            {tech.name}
+                          </span>
                         </button>
                       </div>
                     </SwiperSlide>
@@ -165,7 +196,13 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
               bg-gradient-to-r from-[#A8F00E] via-[#CCF576] to-[#D4F8D3]
               bg-clip-text text-transparent animate-gradient-x"
                     >
-                      <Image src={tech.img} alt={tech.name} width={60} height={60} className="object-cover" />
+                      <Image
+                        src={tech.img}
+                        alt={tech.name}
+                        width={60}
+                        height={60}
+                        className="object-cover"
+                      />
                       <span className="text-sm lg:text-base">{tech.name}</span>
                     </button>
                   ))}

@@ -22,11 +22,19 @@ export type SectionProps = {
 // 프로젝트 타입
 export type Project = {
   title: string;
-  subtitle: string;
   desc: string;
   color: string;
   bg: string;
   url: string;
+};
+
+// 프로젝트 상세 (모달용)
+export type ProjectDetail = {
+  subtitle: string;
+  period: string;
+  techStack: string;
+  participants: string;
+  service: string;
 };
 
 // 연락처 타입
