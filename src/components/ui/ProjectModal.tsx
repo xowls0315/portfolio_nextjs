@@ -10,7 +10,7 @@ const PROJECT_DETAILS: Record<string, ProjectDetail> = {
     subtitle: "약속 장소 중간지점 추천 서비스 개발(Frontend)",
     period: "2025.11 ~ 2025.12",
     techStack:
-      "Next.js 16.1.1 (App Router), React 19.2.3, TypeScript 5, Tailwind CSS 4, Axios 1.13.2, React Icons 5.5.0, Kakao Map JavaScript SDK, Vercel",
+      "Next.js 16.1.1 (App Router), React 19.2.3, TypeScript 5, Tailwind CSS 4, Zustand 5, TanStack Query 5, Axios 1.13.2, React Icons 5.5.0, Kakao Map JavaScript SDK, Vercel",
     participants: "2인",
     service:
       "친구들과 만날 때 출발지만 입력하면, 중간지점 근처의 최적 랜드마크(지하철역, 문화시설, 공공기관 등)를 자동으로 추천해주는 웹 서비스",
@@ -19,7 +19,7 @@ const PROJECT_DETAILS: Record<string, ProjectDetail> = {
     subtitle: "햄버거 메뉴 모음집 서비스 개발(Full-Stack)",
     period: "2025.12 ~ 2026.01",
     techStack:
-      "Next.js 16.1.2 (App Router), React 19.2.3, TypeScript 5, Tailwind CSS 4, React Icons 5.5.0, React Loading Skeleton 3.5.0, Kakao Map JavaScript SDK, Vercel / NestJS 11.0.1, TypeScript 5.7.3, PostgreSQL, TypeORM 0.3.20, Passport(JWT·Kakao OAuth·Local), Swagger 11.2.5, Cheerio·Puppeteer·Tesseract.js, Render, Supabase",
+      "Next.js 16.1.2 (App Router), React 19.2.3, TypeScript 5, Tailwind CSS 4, Zustand 5, TanStack Query 5, React Icons 5.5.0, React Loading Skeleton 3.5.0, Kakao Map JavaScript SDK, Vercel / NestJS 11.0.1, TypeScript 5.7.3, PostgreSQL, TypeORM 0.3.20, Passport(JWT·Kakao OAuth·Local), Swagger 11.2.5, Cheerio·Puppeteer·Tesseract.js, Render, Supabase",
     participants: "1인",
     service:
       "햄버거 브랜드별 메뉴/영양정보를 한 곳에서 탐색하고, 내 주변 매장까지 확인하며, 카카오·일반 로그인 기반 게시판/댓글 커뮤니티를 제공하는 웹 서비스",
