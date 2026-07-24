@@ -10,9 +10,9 @@ const Introduce = ({ disableSectionHeight = false }: SectionProps) => {
   const sectionHeight = useSectionHeight(disableSectionHeight);
 
   const phrases = [
-    '"더 나은 사용자 경험을 고민하는 프론트엔드 개발자입니다."',
-    '"끊임없이 배우고 성장하는 프론트엔드 개발자입니다."',
-    '"꾸준히 성장하는 프론트엔드 개발자입니다."',
+    '"화면부터 API·데이터까지 설계하는 웹 풀스택 개발자입니다."',
+    '"끊임없이 배우고 성장하는 웹 풀스택 개발자입니다."',
+    '"꾸준히 성장하는 웹 풀스택 개발자입니다."',
   ];
 
   return (
@@ -36,7 +36,7 @@ const Introduce = ({ disableSectionHeight = false }: SectionProps) => {
         </h2>
 
         <h2 className="text-[#8792b0] text-xl xs:text-2xl lg:text-4xl">
-          신입 프론트엔드 개발자
+          신입 웹 풀스택 개발자
         </h2>
 
         <motion.div

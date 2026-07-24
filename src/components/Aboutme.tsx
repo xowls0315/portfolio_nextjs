@@ -28,7 +28,7 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
     },
     {
       icon: <FaHeart />,
-      text: "UI/UX, 웹 개발, 새로운 기술 학습",
+      text: "UI/UX, 웹 풀스택 개발, 새로운 기술 학습",
     },
   ];
 
@@ -76,9 +76,10 @@ const Aboutme = ({ disableSectionHeight = false }: SectionProps) => {
                 안녕하세요!
               </h3>
               <span className="mt-2 text-sm xs:text-base lg:text-lg">
-                사용자 중심의 웹 애플리케이션을 만드는 것에 열정을 가진 신입 웹
-                프론트엔드 개발자입니다. 깔끔하고 직관적인 UI/UX를 통해
-                사용자에게 최고의 경험을 제공하고자 노력합니다.
+                React·Next.js 기반 사용자 화면부터 NestJS·PostgreSQL 기반
+                API·인증·배포까지, 서비스 전체를 설계·구현하는 신입 웹 풀스택
+                개발자입니다. 화면 단위가 아닌 서비스 전체 관점에서 안정적인
+                제품을 만들어가고자 노력합니다.
               </span>
 
               <div className="mt-4 flex flex-col gap-2 xs:gap-2 lg:gap-2.5">

@@ -1,6 +1,6 @@
 # Portfolio Website
 
-프론트엔드 개발자 황태진의 포트폴리오 웹사이트입니다. <br />
+웹 풀스택 개발자 황태진의 포트폴리오 웹사이트입니다. <br />
 ※ 배포 링크(Vercel): https://tjin01-portfolio-nextjs.vercel.app/
 
 ## 🚀 기술 스택
@@ -73,13 +73,15 @@ npm start
 
 ## 📝 주요 기술 스택
 
-- HTML5, CSS3, JavaScript, TypeScript
-- React, Next.js
-- Node.js, Express.js, NestJS
-- Git, GitHub
+- **Frontend:** HTML/CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS
+- **Backend:** Node.js, Express.js, NestJS, REST API, Swagger
+- **Database·ORM:** PostgreSQL, Supabase, TypeORM, SQL
+- **Authentication·Integration:** JWT, OAuth 2.0, Passport, Kakao API
+- **Deployment·Tools:** Git, GitHub, Docker, Vercel, Render, UptimeRobot
 
 ## 🎨 특징
 
+- **풀스택 포지셔닝**: 사용자 화면부터 API·인증·데이터·배포까지 서비스 전체 흐름을 다루는 웹 풀스택 포트폴리오
 - **모던한 UI/UX**: 그라데이션과 애니메이션을 활용한 현대적인 디자인
 - **성능 최적화**: Next.js의 최적화 기능 활용
 - **타입 안정성**: TypeScript로 타입 안정성 보장
